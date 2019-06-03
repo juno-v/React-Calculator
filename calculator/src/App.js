@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import Buttons from "./Components/Buttons"; 
+import Buttons from "./Components/Calculator/Buttons"; 
 
 
 class App extends Component {
 
   state = {
-    restuls: '', 
+    result: '', 
   }
 
   onClick = button => {
@@ -31,8 +31,8 @@ class App extends Component {
 
 calculate = () => {
   let checkResult = ''
-  if(this.state.result.includes('-')){
-      checkResult = this.state.result.replace('-','+')
+  if(this.state.result.includes('--')){
+      checkResult = this.state.result.replace('--','+')
   }
 
   else {
