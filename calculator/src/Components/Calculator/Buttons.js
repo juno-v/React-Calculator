@@ -10,7 +10,11 @@ class Buttons extends Component {
         return (
             <div>
                 <center>
-                    <p> { result } </p>
+
+                    <input
+                    placeholder="Calculations go here:"
+                    defaultValue={result} />
+                    <br/> 
                     <Button primary
                     value={7}
                     style={{height: 80, width: 80, margin: 0}}

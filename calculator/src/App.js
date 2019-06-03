@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Buttons from "./Components/Calculator/Buttons"; 
+import Users from "./Components/Calculator/Users";
 
 
 class App extends Component {
@@ -68,6 +69,7 @@ backspace = () => {
     return (
       <div>
         <Buttons result={this.state.result} onClick={this.onClick} /> 
+        <Users /> 
       </div>
     );
   }
