@@ -23,13 +23,16 @@ class App extends Component {
       <div>
         <Switch>
           <Redirect exact from="/" to="/home" />
-          
-          <Calculator /> 
 
+          <Route
+            exact
+            path="/log-in"
+            component={LoginPage}
+          />
           <ProtectedRoute
             exact
-            path="/login"
-            component={LoginPage}
+            path="/home"
+            component={Calculator}
           />
           {/* If none of the other routes matched, we will show a 404. */}
           <Route render={() => <h1>404</h1>} />

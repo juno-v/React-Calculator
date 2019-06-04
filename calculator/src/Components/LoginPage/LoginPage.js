@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Icon } from 'semantic-ui-react';
+import { Input, Button } from 'semantic-ui-react'
 
 class LoginPage extends Component {
   state = {
@@ -32,7 +34,7 @@ class LoginPage extends Component {
   render() {
     return (
       <div>
-        <h1 > Insert About Here  </h1>
+         <center>
         {this.props.errors.loginMessage && (
           <h2
             className="alert"
@@ -45,8 +47,11 @@ class LoginPage extends Component {
           <h1>Login</h1>
           <div>
             <label htmlFor="username">
+            <Icon 
+            color='blue' 
+            name='users' />
               Username:
-              <input
+              <Input
                 type="text"
                 name="username"
                 value={this.state.username}
@@ -54,10 +59,14 @@ class LoginPage extends Component {
               />
             </label>
           </div>
+          <br/> 
           <div>
             <label htmlFor="password">
+            <Icon 
+            color='blue' 
+            name='key' />
               Password:
-              <input
+              <Input
                 type="password"
                 name="password"
                 value={this.state.password}
@@ -65,8 +74,9 @@ class LoginPage extends Component {
               />
             </label>
           </div>
+          <br/> 
           <div>
-            <input
+            <Input
               className="log-in"
               type="submit"
               name="submit"
@@ -74,14 +84,14 @@ class LoginPage extends Component {
             />
           </div>
         </form>
-        <center>
-          <button
+        <br/> 
+          <Button
             type="button"
             className="link-button"
             onClick={() => {this.props.dispatch({type: 'SET_TO_REGISTER_MODE'})}}
           >
             Register
-          </button>
+          </Button>
         </center>
       </div>
     );

@@ -9,14 +9,13 @@ const router = express.Router();
 // Handles Ajax request for user information if user is authenticated
 router.get('/', rejectUnauthenticated, (req, res) => {
   // Send back user object from the session (previously queried from the database)
-  res.send(req.user);
+  res.send(req.user);  
 });
 
 // Handles POST request with new user data
 // The only thing different from this and every other post we've seen
 // is that the password gets encrypted before being inserted
 router.post('/register', (req, res, next) => {  
-console.log(req.body.username);
 
   const username = req.body.username;
   const password = encryptLib.encryptPassword(req.body.password);
@@ -34,6 +33,7 @@ console.log(req.body.username);
 // this middleware will send a 404 if not successful
 router.post('/login', userStrategy.authenticate('local'), (req, res) => {
   res.sendStatus(200);
+  
 });
 
 // clear all server session information about this user
