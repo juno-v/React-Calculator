@@ -23,7 +23,7 @@ class Calculator extends Component {
         })
     }
 
-    else if(button === "C"){
+    else if(button === "C") {
         this.reset();
         if(this.state.resultList === "") {
           alert(`Do some math for results!`)
@@ -31,7 +31,7 @@ class Calculator extends Component {
         this.state.resultList.push(this.state.userMath + "= " + (this.state.result))
         this.props.dispatch({ type: 'POST_ENTRY', payload: this.state.resultList})
         this.setState({
-          resultList: '', 
+          resultList: [], 
         })
       }
     }
