@@ -29,7 +29,7 @@ class App extends Component {
             path="/log-in"
             component={LoginPage}
           />
-          <ProtectedRoute
+          <Route
             exact
             path="/home"
             component={Calculator}

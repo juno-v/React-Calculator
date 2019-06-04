@@ -9,7 +9,9 @@ class Users extends Component {
     }
 
     state = {
-       
+       userInfo: {
+           username: this.props.reduxState.user.username, 
+       }
     }
 
     handleChange = (propertyName) => {
@@ -37,19 +39,23 @@ class Users extends Component {
             <div>
                 <center> 
                     <br/> 
+
                     <Icon 
                     color='blue' 
                     name='users' />
 
-                    {/* {JSON.stringify(this.props.reduxState.user)} */}
+                    {this.props.reduxState.user.username}
+                    <br/> 
+                    {this.props.result}
                 </center>
             </div>
         );
     }
 }
 
-const mapStateToProps = state => ({
-    errors: state.errors,
+const mapStateToProps = reduxState => ({
+    reduxState,
 });
+  
   
   export default connect(mapStateToProps)(Users);
