@@ -1,15 +1,25 @@
 import React, { Component, Fragment } from 'react';
 import { Icon } from 'semantic-ui-react';
-import { Input, Button } from 'semantic-ui-react'
+import { connect } from 'react-redux';
+import { Button } from "semantic-ui-react"; 
 
 class Users extends Component {
 
+    componentDidMount() {
+        this.props.dispatch({ type: 'FETCH_USER' })
+        this.interval = setInterval(() => this.props.dispatch({ type: 'GET_ENTRIES' }), 1000 );
+        this.props.dispatch({type:"GET_ENTRIES"})
+         
+    }
+
+    componentWillUnmount () {
+        clearInterval(this.intervalId)
+      }
+
     state = {
-        userInfo: {
-            username: '', 
-            calculations: this.props.result, 
-        },
-        userList: [], 
+       userInfo: {
+           username: this.props.reduxState.user.username, 
+       }
     }
 
     handleChange = (propertyName) => {
@@ -23,22 +33,10 @@ class Users extends Component {
         }
     }
 
-    test = () => {
-        this.state.userList.push(this.state.userInfo)
-        // console.log(this.state);
-        if(this.state.userInfo.username === '') {
-            alert("Username is required!"); 
-        }
-        this.setState({
-            userInfo: {
-                username: '', 
-            }
-        })
-        
-    }
-
-    check = () => {
-        console.log(this.state);
+    deleteEntry = (event) => {
+        this.props.dispatch({ type: 'DELETE_ENTRY', payload: event.target.value})
+        console.log(event.target.value);
+                
     }
 
     render() {
@@ -46,35 +44,37 @@ class Users extends Component {
             <div>
                 <center> 
                     <br/> 
+
                     <Icon 
                     color='blue' 
                     name='users' />
 
-                    <Input 
-                    value={this.state.userInfo.username}
-                    onChange={this.handleChange('username')}
-                    ref={this.inputRef} 
-                    placeholder='Insert Username' />
+                    {this.props.reduxState.user.username}
+                    <br/> 
 
-                    <Button 
-                    onClick={this.test}
-                    content='Create User' 
-                    />
-                    {/* uncomment to see array contents live */}
-                    {/* {JSON.stringify(this.state.userList)} */}
-                    {this.state.userList.map( (user, index) => {
-                        return (
-                            <Fragment key={index}>
-                                <p onClick={this.check}> {user.username} </p>
-                                <p> {user.calculations} </p>
-                            </Fragment>
-                        )
+                    {this.props.reduxState.entries.map( (entries, index) => {
+                    return (
+                        <Fragment key={index} >
+                            <h4> {entries.calculation} </h4> 
+                            <Button 
+                            value={entries.id}
+                            secondary 
+                            onClick={this.deleteEntry}
+                            > Delete </Button>
+                        </Fragment>
+                    )
                     })}
-
+                    {/* uncomment to see entriesReducer contents */}
+                    {/* {JSON.stringify(this.props.reduxState.entriesReducer)} */}
                 </center>
             </div>
         );
     }
 }
 
-export default Users;
+const mapStateToProps = reduxState => ({
+    reduxState,
+});
+  
+  
+export default connect(mapStateToProps)(Users);

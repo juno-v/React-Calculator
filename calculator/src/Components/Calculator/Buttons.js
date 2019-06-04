@@ -5,7 +5,7 @@ class Buttons extends Component {
 
     render() {
 
-        let result  = this.props.result; 
+        let result  = this.props.result.userMath; 
 
         return (
             <div>
