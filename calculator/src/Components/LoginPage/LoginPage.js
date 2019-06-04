@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import HomeHeader from "../HomeHeader/HomeHeader";
 
 class LoginPage extends Component {
   state = {
@@ -33,7 +32,6 @@ class LoginPage extends Component {
   render() {
     return (
       <div>
-        <HomeHeader /> 
         <h1 > Insert About Here  </h1>
         {this.props.errors.loginMessage && (
           <h2

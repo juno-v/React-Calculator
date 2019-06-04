@@ -1,78 +1,44 @@
 import React, { Component } from 'react';
-import './App.css';
-import Buttons from "./Components/Calculator/Buttons"; 
-import Users from "./Components/Calculator/Users";
+import Calculator from "./Components/Calculator/Calculator"; 
+import {connect} from 'react-redux';
+import {
+  HashRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from 'react-router-dom';
 
+import ProtectedRoute from "./Components/ProtectedRoute/ProtectRoute"; 
+import LoginPage from "./Components/LoginPage/LoginPage"; 
 
 class App extends Component {
 
-  state = {
-    result: '', 
+  componentDidMount () {
+    this.props.dispatch({type: 'FETCH_USER'})
   }
-
-  onClick = button => {
-
-    if(button === "="){
-        this.calculate();
-    }
-
-    else if(button === "C"){
-        this.reset();
-    }
-    else if(button === "CE"){
-        this.backspace();
-    }
-
-    else {
-        this.setState({
-            result: this.state.result + button
-        })
-    }
-};
-
-calculate = () => {
-  let checkResult = ''
-  if(this.state.result.includes('--')){
-      checkResult = this.state.result.replace('--','+')
-  }
-
-  else {
-      checkResult = this.state.result
-  }
-
-  try {
-      this.setState({
-          // eslint-disable-next-line
-          result: (eval(checkResult) || "" ) + ""
-      })
-  } catch (e) {
-      this.setState({
-          result: "error"
-      })
-
-  }
-};
-
-reset = () => {
-  this.setState({
-      result: ""
-  })
-};
-
-backspace = () => {
-  this.setState({
-      result: this.state.result.slice(0, -1)
-  })
-};
 
   render() {
     return (
+      <Router>
       <div>
-        <Buttons result={this.state.result} onClick={this.onClick} /> 
-        <Users result={this.state.result} /> 
+        <Switch>
+          <Redirect exact from="/" to="/home" />
+          
+          <Calculator /> 
+
+          <ProtectedRoute
+            exact
+            path="/login"
+            component={LoginPage}
+          />
+          {/* If none of the other routes matched, we will show a 404. */}
+          <Route render={() => <h1>404</h1>} />
+        </Switch>
+
       </div>
+    </Router>
     );
   }
 }
 
-export default App;
+export default connect()(App);
