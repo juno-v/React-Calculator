@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Buttons from "./Buttons"; 
 import Users from "./Users";
+import { connect } from 'react-redux';
 import * as math from 'mathjs'
 
 class Calculator extends Component {
@@ -24,7 +25,8 @@ class Calculator extends Component {
 
     else if(button === "C"){
         this.reset();
-        this.state.resultList.push(this.state.userMath + " " + parseInt(this.state.result))
+        this.state.resultList.push(this.state.userMath + "= " + (this.state.result))
+        this.props.dispatch({ type: 'POST_ENTRY', payload: this.state.resultList})
     }
     else if(button === "CE"){
         this.backspace();
@@ -83,4 +85,9 @@ backspace = () => {
   }
 }
 
-export default Calculator;
+const mapStateToProps = reduxState => ({
+  reduxState,
+});
+
+
+export default connect(mapStateToProps)(Calculator);

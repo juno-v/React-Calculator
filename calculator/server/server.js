@@ -10,6 +10,7 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
+const entriesRouter = require('./routes/entries.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -26,6 +27,7 @@ app.use(express.static('build'));
 
 /* Routes */
 app.use('/api/user', userRouter);
+app.use('/entries', entriesRouter);
 
 // App Set //
 const PORT = process.env.PORT || 5000;

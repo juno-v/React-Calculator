@@ -55,4 +55,4 @@ const mapStateToProps = reduxState => ({
 });
   
   
-  export default connect(mapStateToProps)(Users);
+export default connect(mapStateToProps)(Users);
