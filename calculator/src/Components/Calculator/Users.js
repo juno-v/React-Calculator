@@ -42,6 +42,8 @@ class Users extends Component {
                             <p key={index} > {result} = {this.props.result.result} </p>
                     )
                     })}
+                    
+                    {/* {JSON.stringify(this.props.result)} */}
                 </center>
             </div>
         );

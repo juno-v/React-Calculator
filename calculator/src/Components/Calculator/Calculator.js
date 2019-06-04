@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
 import Buttons from "./Buttons"; 
 import Users from "./Users";
+import * as math from 'mathjs'
 
 class Calculator extends Component {
 
+  
   state = {
     userMath: '', 
     resultList: [], 
     result: '', 
+    test: '', 
   }
 
   onClick = button => {
 
     if(button === "=") {
         this.calculate();
+        this.setState({
+          userMath: this.state.userMath + " " + String(this.state.result)
+        })
     }
 
     else if(button === "C"){
         this.reset();
+        this.state.resultList.push(this.state.userMath + " " + parseInt(this.state.result))
     }
     else if(button === "CE"){
         this.backspace();
@@ -44,20 +51,19 @@ calculate = () => {
       this.setState({
           // eslint-disable-next-line
           ...this.state, 
-          result: (eval(checkResult) || "" ) + ""
-      })
+          result: (math.eval(checkResult) || "" ) + ""
+      })      
   } catch (e) {
       this.setState({
           userMath: "error"
       })
-
   }
 };
 
 reset = () => {
-  this.state.resultList.push(this.state.userMath)
   this.setState({
       userMath: "",
+      result: "", 
   })
 };
 
