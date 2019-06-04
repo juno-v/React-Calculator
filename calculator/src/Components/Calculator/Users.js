@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 
@@ -25,15 +25,6 @@ class Users extends Component {
         }
     }
 
-    test = () => {
-       
-        
-    }
-
-    check = () => {
-        console.log(this.state);
-    }
-
     render() {
         return (
             <div>
@@ -48,7 +39,7 @@ class Users extends Component {
                     <br/> 
                     {this.props.result.resultList.map( (result, index) => {
                     return (
-                        <p key={index} > {result} </p>
+                            <p key={index} > {result} = {this.props.result.result} </p>
                     )
                     })}
                 </center>

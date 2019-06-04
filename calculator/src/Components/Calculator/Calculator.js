@@ -5,8 +5,9 @@ import Users from "./Users";
 class Calculator extends Component {
 
   state = {
-    result: '', 
+    userMath: '', 
     resultList: [], 
+    result: '', 
   }
 
   onClick = button => {
@@ -24,51 +25,52 @@ class Calculator extends Component {
 
     else {
         this.setState({
-            result: this.state.result + button
+            userMath: this.state.userMath + button
         })
     }
 };
 
 calculate = () => {
   let checkResult = ''
-  if(this.state.result.includes('--')){
-      checkResult = this.state.result.replace('--','+')
+  if(this.state.userMath.includes('--')){
+      checkResult = this.state.userMath.replace('--','+')
   }
 
   else {
-      checkResult = this.state.result
+      checkResult = this.state.userMath
   }
 
   try {
       this.setState({
           // eslint-disable-next-line
+          ...this.state, 
           result: (eval(checkResult) || "" ) + ""
       })
   } catch (e) {
       this.setState({
-          result: "error"
+          userMath: "error"
       })
 
   }
 };
 
 reset = () => {
-  this.state.resultList.push(this.state.result)
+  this.state.resultList.push(this.state.userMath)
   this.setState({
-      result: ""
+      userMath: "",
   })
 };
 
 backspace = () => {
   this.setState({
-      result: this.state.result.slice(0, -1)
+      userMath: this.state.userMath.slice(0, -1)
   })
 };
 
   render() {
     return (
       <div>
-        <Buttons result={this.state.result} onClick={this.onClick} /> 
+        <Buttons result={this.state} onClick={this.onClick} /> 
         <Users result={this.state} /> 
       </div>
     );
