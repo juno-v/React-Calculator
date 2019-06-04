@@ -6,12 +6,18 @@ class Users extends Component {
 
     componentDidMount() {
         this.props.dispatch({ type: 'FETCH_USER' })
-        this.props.dispatch({ type: 'GET_ENTRIES' })
+        this.interval = setInterval(() => this.props.dispatch({ type: 'GET_ENTRIES' }), 1000 );
+         
     }
+
+    componentWillUnmount () {
+        clearInterval(this.intervalId)
+      }
 
     state = {
        userInfo: {
            username: this.props.reduxState.user.username, 
+           intervalId: '', 
        }
     }
 
@@ -38,9 +44,10 @@ class Users extends Component {
 
                     {this.props.reduxState.user.username}
                     <br/> 
-                    {this.props.result.resultList.map( (result, index) => {
+
+                    {this.props.reduxState.entries.map( (entries, index) => {
                     return (
-                            <p key={index} > {result} = {this.props.result.result} </p>
+                            <p key={index} > {entries.calculation} </p>
                     )
                     })}
                     
