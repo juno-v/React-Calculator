@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Icon } from 'semantic-ui-react';
 import { Input, Button } from 'semantic-ui-react'
 
@@ -7,7 +7,7 @@ class Users extends Component {
     state = {
         userInfo: {
             username: '', 
-            calculations: '', 
+            calculations: this.props.result, 
         },
         userList: [], 
     }
@@ -16,6 +16,7 @@ class Users extends Component {
         return(event) => {            
             this.setState({
                 userInfo: {
+                    ...this.state.userInfo, 
                     [propertyName]: event.target.value, 
                 }
             })                                   
@@ -24,7 +25,10 @@ class Users extends Component {
 
     test = () => {
         this.state.userList.push(this.state.userInfo)
-        console.log(this.state);
+        // console.log(this.state);
+        if(this.state.userInfo.username === '') {
+            alert("Username is required!"); 
+        }
         this.setState({
             userInfo: {
                 username: '', 
@@ -33,6 +37,9 @@ class Users extends Component {
         
     }
 
+    check = () => {
+        console.log(this.state);
+    }
 
     render() {
         return (
@@ -57,8 +64,10 @@ class Users extends Component {
                     {/* {JSON.stringify(this.state.userList)} */}
                     {this.state.userList.map( (user, index) => {
                         return (
-                            <p key={index}> {user.username.toString()} </p>
-                            // <p> {user.calculations.toString()} </p>
+                            <Fragment key={index}>
+                                <p onClick={this.check}> {user.username} </p>
+                                <p> {user.calculations} </p>
+                            </Fragment>
                         )
                     })}
 

@@ -69,7 +69,7 @@ backspace = () => {
     return (
       <div>
         <Buttons result={this.state.result} onClick={this.onClick} /> 
-        <Users /> 
+        <Users result={this.state.result} /> 
       </div>
     );
   }
