@@ -87,6 +87,7 @@ backspace = () => {
       <div>
         <Buttons result={this.state} onClick={this.onClick} /> 
         <Users result={this.state} /> 
+        <h4> Technologies used: React, Redux, Semantic UI, Passport, MathJs, Axios, Node, and Express </h4>
       </div>
     );
   }
