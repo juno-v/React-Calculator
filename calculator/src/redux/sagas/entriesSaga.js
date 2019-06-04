@@ -18,7 +18,7 @@ function* getEntries() {
         const action = {type: 'SET_ENTRIES', payload: response.data};
         yield put(action);
     }catch (error) {
-        alert(`Error getting calculations! Sorry! Try again later.`, error);
+        // alert(`Error getting calculations! Sorry! Try again later.`, error);
         console.log(`Error. Check getEntries Saga `)
     }
 }
