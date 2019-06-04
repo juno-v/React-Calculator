@@ -6,6 +6,7 @@ class Users extends Component {
 
     componentDidMount() {
         this.props.dispatch({ type: 'FETCH_USER' })
+        this.props.dispatch({ type: 'GET_ENTRIES' })
     }
 
     state = {
@@ -43,7 +44,7 @@ class Users extends Component {
                     )
                     })}
                     
-                    {/* {JSON.stringify(this.props.result)} */}
+                    {/* {JSON.stringify(this.props.reduxState.entriesReducer)} */}
                 </center>
             </div>
         );
