@@ -6,6 +6,7 @@ class Calculator extends Component {
 
   state = {
     result: '', 
+    resultList: [], 
   }
 
   onClick = button => {
@@ -52,6 +53,7 @@ calculate = () => {
 };
 
 reset = () => {
+  this.state.resultList.push(this.state.result)
   this.setState({
       result: ""
   })
@@ -67,7 +69,7 @@ backspace = () => {
     return (
       <div>
         <Buttons result={this.state.result} onClick={this.onClick} /> 
-        <Users result={this.state.result} /> 
+        <Users result={this.state} /> 
       </div>
     );
   }

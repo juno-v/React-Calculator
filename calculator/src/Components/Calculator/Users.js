@@ -46,7 +46,11 @@ class Users extends Component {
 
                     {this.props.reduxState.user.username}
                     <br/> 
-                    {this.props.result}
+                    {this.props.result.resultList.map( (result, index) => {
+                    return (
+                        <p key={index} > {result} </p>
+                    )
+                    })}
                 </center>
             </div>
         );
