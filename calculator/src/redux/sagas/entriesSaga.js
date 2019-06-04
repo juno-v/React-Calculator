@@ -23,9 +23,24 @@ function* getEntries() {
     }
 }
 
+function* deleteEntry(action) {
+    try {
+    console.log(`HIT deleteEntries`);
+    console.log(`action.payload is: `, action.payload);
+    const id = action.payload
+    
+    yield axios.delete(`/entries/${id}`, action.payload);
+    yield put({ type: 'GET_ENTRIES', payload: action.payload})
+    }
+    catch (error) {
+      console.log(`Couldn't delete the entry`);
+    }
+}
+
 function* entriesSaga() {
     yield takeLatest('POST_ENTRY', postEntries);
     yield takeLatest('GET_ENTRIES', getEntries);
+    yield takeLatest('DELETE_ENTRY', deleteEntry);
   }
   
   export default entriesSaga;

@@ -1,12 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import { Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import { Button } from "semantic-ui-react"; 
 
 class Users extends Component {
 
     componentDidMount() {
         this.props.dispatch({ type: 'FETCH_USER' })
         this.interval = setInterval(() => this.props.dispatch({ type: 'GET_ENTRIES' }), 1000 );
+        this.props.dispatch({type:"GET_ENTRIES"})
          
     }
 
@@ -17,7 +19,6 @@ class Users extends Component {
     state = {
        userInfo: {
            username: this.props.reduxState.user.username, 
-           intervalId: '', 
        }
     }
 
@@ -30,6 +31,12 @@ class Users extends Component {
                 }
             })                                   
         }
+    }
+
+    deleteEntry = (event) => {
+        this.props.dispatch({ type: 'DELETE_ENTRY', payload: event.target.value})
+        console.log(event.target.value);
+                
     }
 
     render() {
@@ -47,10 +54,17 @@ class Users extends Component {
 
                     {this.props.reduxState.entries.map( (entries, index) => {
                     return (
-                            <p key={index} > {entries.calculation} </p>
+                        <Fragment key={index} >
+                            <h4> {entries.calculation} </h4> 
+                            <Button 
+                            value={entries.id}
+                            secondary 
+                            onClick={this.deleteEntry}
+                            > Delete </Button>
+                        </Fragment>
                     )
                     })}
-                    
+                    {/* uncomment to see entriesReducer contents */}
                     {/* {JSON.stringify(this.props.reduxState.entriesReducer)} */}
                 </center>
             </div>
