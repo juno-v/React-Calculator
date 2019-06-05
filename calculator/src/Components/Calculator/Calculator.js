@@ -51,7 +51,7 @@ calculate = () => {
       this.setState({
           // eslint-disable-next-line
           ...this.state, 
-          result: (math.eval(checkResult) || "" ) + ""
+          result: `= ` + (math.eval(checkResult) || "" ) + ""
       })      
   } catch (e) {
       this.setState({
@@ -77,7 +77,7 @@ backspace = () => {
 async test () {
   try {
     await this.setState({ userMath: this.state.userMath + " " + String(this.state.result)})     
-    await this.state.resultList.push(this.state.userMath + "= " + (this.state.result))
+    await this.state.resultList.push(this.state.userMath + (this.state.result))
     await this.props.dispatch({ type: 'POST_ENTRY', payload: this.state.resultList})
   }
   catch (error) {
@@ -91,7 +91,7 @@ async test () {
     return (
       <div>
         <center> 
-          <input placeholder={this.state.userMath + " " + "=" + this.state.result} />
+          <input placeholder={this.state.userMath + " " + this.state.result} />
         </center>
         <Buttons result={this.state} onClick={this.onClick} /> 
         <Users result={this.state} /> 
