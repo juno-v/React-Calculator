@@ -12,7 +12,6 @@ class Calculator extends Component {
     userMath: '', 
     resultList: [], 
     result: '', 
-    test: '', 
   }
 
   onClick = button => {
@@ -20,7 +19,6 @@ class Calculator extends Component {
     if(button === "=") {
         this.calculate();    
         this.test();
-        // window.location.reload();
     }
 
     else if(button === "C") {

@@ -8,8 +8,6 @@ class Users extends Component {
     componentDidMount() {
         this.props.dispatch({ type: 'FETCH_USER' })
         this.interval = setInterval(() => this.props.dispatch({ type: 'GET_ENTRIES' }), 1000 );
-        // this.props.dispatch({type:"GET_ENTRIES"})
-         
     }
 
     componentWillUnmount () {
@@ -34,9 +32,7 @@ class Users extends Component {
     }
 
     deleteEntry = (event) => {
-        this.props.dispatch({ type: 'DELETE_ENTRY', payload: event.target.value})
-        console.log(event.target.value);
-                
+        this.props.dispatch({ type: 'DELETE_ENTRY', payload: event.target.value})     
     }
 
     render() {
