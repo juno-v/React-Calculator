@@ -5,15 +5,9 @@ class Buttons extends Component {
 
     render() {
 
-        let result  = this.props.result.userMath; 
-
         return (
-            <div>
+            <div> 
                 <center>
-
-                    <input
-                    placeholder="Calculations go here:"
-                    defaultValue={result} />
                     <br/> 
                     <Button primary
                     value={7}

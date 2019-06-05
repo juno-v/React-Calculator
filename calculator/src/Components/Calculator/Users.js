@@ -8,7 +8,7 @@ class Users extends Component {
     componentDidMount() {
         this.props.dispatch({ type: 'FETCH_USER' })
         this.interval = setInterval(() => this.props.dispatch({ type: 'GET_ENTRIES' }), 1000 );
-        this.props.dispatch({type:"GET_ENTRIES"})
+        // this.props.dispatch({type:"GET_ENTRIES"})
          
     }
 
@@ -66,6 +66,7 @@ class Users extends Component {
                     })}
                     {/* uncomment to see entriesReducer contents */}
                     {/* {JSON.stringify(this.props.reduxState.entriesReducer)} */}
+                    <br/> {JSON.stringify(this.props.result)}
                 </center>
             </div>
         );

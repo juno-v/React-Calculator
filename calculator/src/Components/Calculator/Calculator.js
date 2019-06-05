@@ -3,6 +3,7 @@ import Buttons from "./Buttons";
 import Users from "./Users";
 import { connect } from 'react-redux';
 import * as math from 'mathjs'
+import { equal } from 'assert';
 
 class Calculator extends Component {
 
@@ -17,23 +18,13 @@ class Calculator extends Component {
   onClick = button => {
 
     if(button === "=") {
-        this.calculate();
-        this.setState({
-          userMath: this.state.userMath + " " + String(this.state.result)
-        })
+        this.calculate();    
+        this.test();
+        // window.location.reload();
     }
 
     else if(button === "C") {
         this.reset();
-        if(this.state.resultList === "") {
-          alert(`Do some math for results!`)
-        } else {
-        this.state.resultList.push(this.state.userMath + "= " + (this.state.result))
-        this.props.dispatch({ type: 'POST_ENTRY', payload: this.state.resultList})
-        this.setState({
-          resultList: [], 
-        })
-      }
     }
     else if(button === "CE"){
         this.backspace();
@@ -73,6 +64,7 @@ reset = () => {
   this.setState({
       userMath: "",
       result: "", 
+      resultList: [], 
   })
 };
 
@@ -82,9 +74,25 @@ backspace = () => {
   })
 };
 
+async test () {
+  try {
+    await this.setState({ userMath: this.state.userMath + " " + String(this.state.result)})     
+    await this.state.resultList.push(this.state.userMath + "= " + (this.state.result))
+    await this.props.dispatch({ type: 'POST_ENTRY', payload: this.state.resultList})
+  }
+  catch (error) {
+    console.log(`error`);
+  }
+}
+
   render() {
+
+
     return (
       <div>
+        <center> 
+          <input placeholder={this.state.userMath + " " + "=" + this.state.result} />
+        </center>
         <Buttons result={this.state} onClick={this.onClick} /> 
         <Users result={this.state} /> 
         <h4> Technologies used: React, Redux, Semantic UI, Passport, MathJs, Axios, Node, and Express </h4>
