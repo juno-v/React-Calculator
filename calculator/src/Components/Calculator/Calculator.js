@@ -83,6 +83,11 @@ async test () {
   }
 }
 
+websiteUrl = (url) => {
+  let gitHubLink = <a href="https://github.com/jvue96/calculator-website" rel="noopener noreferrer" target="_blank"> Github </a>
+  return gitHubLink; 
+}
+
   render() {
 
 
@@ -113,7 +118,7 @@ async test () {
         </center>
         <Buttons result={this.state} onClick={this.onClick} /> 
         <h4> Technologies used: React, Redux, Semantic UI, MathJs, Axios, Node, and Express. </h4>
-        <h4> Github Repo Here:  </h4>
+        <h4> Github Repo Here: {this.websiteUrl()}</h4>
       </div>
     );
   }
