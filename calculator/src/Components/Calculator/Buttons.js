@@ -112,7 +112,7 @@ class Buttons extends Component {
                     </button> 
                     <br/> 
                     <button 
-                    className="white-buttons"
+                    className="red-buttons"
                     value={"+"}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}

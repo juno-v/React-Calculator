@@ -98,7 +98,7 @@ websiteUrl = (url) => {
           <p> Minimize/Maximize screen zoom to adjust calculator size to screen and view all entries. </p>
           <hr />
         </center>
-        <Users result={this.state} /> 
+        <Users result={this.state}/> 
         <center> 
           <div className="calculation-border" >
             <h1 className="calculations-box">
