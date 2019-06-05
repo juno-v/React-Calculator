@@ -91,7 +91,12 @@ async test () {
     return (
       <div>
         <center> 
-
+          <p>10 Most Recent Entries Shown Below: </p> 
+          <p> Minimize/Maximize screen zoom to adjust calculator size to screen and view all entries. </p>
+          <hr />
+        </center>
+        <Users result={this.state} /> 
+        <center> 
           <div className="calculation-border" >
             <h1 className="calculations-box">
             {this.state.userMath + " " + this.state.result}
@@ -100,7 +105,6 @@ async test () {
 
           <div className="texas-instruments-box">
               <h2>
-                <br/>
                 Texas Instruments TI-108
               </h2>
               <div className="black-box" >
@@ -110,8 +114,8 @@ async test () {
 
         </center>
         <Buttons result={this.state} onClick={this.onClick} /> 
-        <Users result={this.state} /> 
-        <h4> Technologies used: React, Redux, Semantic UI, Passport, MathJs, Axios, Node, and Express </h4>
+        <h4> Technologies used: React, Redux, Semantic UI, MathJs, Axios, Node, and Express. </h4>
+        <h4> Github Repo Here:  </h4>
       </div>
     );
   }

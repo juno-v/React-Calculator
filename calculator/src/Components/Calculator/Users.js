@@ -61,10 +61,10 @@ class Users extends Component {
                             secondary 
                             onClick={this.deleteEntry}
                             > Delete </Button>
+                            <br/> <br/> 
                         </Fragment>
                     )
                     })}
-                    <hr/> 
                     {/* uncomment to see entriesReducer contents */}
                     {/* {JSON.stringify(this.props.reduxState.entriesReducer)} */}
                 </center>
