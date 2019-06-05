@@ -1,0 +1,43 @@
+.calculator-boarder {
+    background-color: blue; 
+    width: 400px; 
+    height: 480px;
+}
+
+.calculations-box {
+    background-color: #D8D8D8; 
+    height: 100px; 
+    width: 300px;
+}
+
+.calculation-border {
+    background-color: #2146D9; 
+    height: 100px; 
+    width: 400px;
+}
+
+.red-buttons {
+    background-color: #F04E4E;
+    color: white; 
+    font-size: 30px; 
+}
+
+.white-buttons {
+    background-color: white; 
+    color:#2146D9; 
+    font-size: 30px; 
+}
+
+.texas-instruments-box {
+    background-color: #2146D9; 
+    color: white; 
+    height: 100px; 
+    width: 400px; 
+    text-align: left; 
+}
+
+.black-box {
+    background-color: black;
+    height: 100px; 
+    width: 200px; 
+}

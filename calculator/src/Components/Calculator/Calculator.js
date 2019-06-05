@@ -3,6 +3,7 @@ import Buttons from "./Buttons";
 import Users from "./Users";
 import { connect } from 'react-redux';
 import * as math from 'mathjs'
+import "./Calculator.css"
 
 class Calculator extends Component {
 
@@ -17,23 +18,13 @@ class Calculator extends Component {
   onClick = button => {
 
     if(button === "=") {
-        this.calculate();
-        this.setState({
-          userMath: this.state.userMath + " " + String(this.state.result)
-        })
+        this.calculate();    
+        this.test();
+        // window.location.reload();
     }
 
     else if(button === "C") {
         this.reset();
-        if(this.state.resultList === "") {
-          alert(`Do some math for results!`)
-        } else {
-        this.state.resultList.push(this.state.userMath + "= " + (this.state.result))
-        this.props.dispatch({ type: 'POST_ENTRY', payload: this.state.resultList})
-        this.setState({
-          resultList: [], 
-        })
-      }
     }
     else if(button === "CE"){
         this.backspace();
@@ -60,7 +51,7 @@ calculate = () => {
       this.setState({
           // eslint-disable-next-line
           ...this.state, 
-          result: (math.eval(checkResult) || "" ) + ""
+          result: `= ` + (math.eval(checkResult) || "" ) + ""
       })      
   } catch (e) {
       this.setState({
@@ -73,6 +64,7 @@ reset = () => {
   this.setState({
       userMath: "",
       result: "", 
+      resultList: [], 
   })
 };
 
@@ -82,12 +74,48 @@ backspace = () => {
   })
 };
 
+async test () {
+  try {
+    await this.setState({ userMath: this.state.userMath + " " + String(this.state.result)})     
+    await this.state.resultList.push(this.state.userMath + (this.state.result))
+    await this.props.dispatch({ type: 'POST_ENTRY', payload: this.state.resultList})
+  }
+  catch (error) {
+    console.log(`error`);
+  }
+}
+
   render() {
+
+
     return (
       <div>
-        <Buttons result={this.state} onClick={this.onClick} /> 
+        <center> 
+          <p>10 Most Recent Entries Shown Below: </p> 
+          <p> Minimize/Maximize screen zoom to adjust calculator size to screen and view all entries. </p>
+          <hr />
+        </center>
         <Users result={this.state} /> 
-        <h4> Technologies used: React, Redux, Semantic UI, Passport, MathJs, Axios, Node, and Express </h4>
+        <center> 
+          <div className="calculation-border" >
+            <h1 className="calculations-box">
+            {this.state.userMath + " " + this.state.result}
+            </h1>
+          </div>
+
+          <div className="texas-instruments-box">
+              <h2>
+                Texas Instruments TI-108
+              </h2>
+              <div className="black-box" >
+              </div>
+             
+          </div>
+
+        </center>
+        <Buttons result={this.state} onClick={this.onClick} /> 
+        <h4> Technologies used: React, Redux, Semantic UI, MathJs, Axios, Node, and Express. </h4>
+        <h4> Github Repo Here:  </h4>
       </div>
     );
   }

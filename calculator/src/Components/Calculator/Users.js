@@ -8,7 +8,7 @@ class Users extends Component {
     componentDidMount() {
         this.props.dispatch({ type: 'FETCH_USER' })
         this.interval = setInterval(() => this.props.dispatch({ type: 'GET_ENTRIES' }), 1000 );
-        this.props.dispatch({type:"GET_ENTRIES"})
+        // this.props.dispatch({type:"GET_ENTRIES"})
          
     }
 
@@ -55,12 +55,13 @@ class Users extends Component {
                     {this.props.reduxState.entries.map( (entries, index) => {
                     return (
                         <Fragment key={index} >
-                            <h4> {entries.calculation} </h4> 
+                            <h1> {entries.calculation} </h1> 
                             <Button 
                             value={entries.id}
                             secondary 
                             onClick={this.deleteEntry}
                             > Delete </Button>
+                            <br/> <br/> 
                         </Fragment>
                     )
                     })}
