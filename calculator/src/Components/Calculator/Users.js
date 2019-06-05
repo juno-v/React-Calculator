@@ -33,6 +33,7 @@ class Users extends Component {
 
     deleteEntry = (event) => {
         this.props.dispatch({ type: 'DELETE_ENTRY', payload: event.target.value})     
+        this.props.reset(); 
     }
 
     render() {
