@@ -11,20 +11,23 @@ class Buttons extends Component {
                     <div className="calculator-boarder" >
                     <br/> 
                     <button 
+                    className="white-buttons"
                     value={7}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     7
                     </button>
-                    <button 
+                    <button
+                    className="white-buttons" 
                     value={8}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     8
                     </button>
-                    <button 
+                    <button
+                    className="white-buttons" 
                     value={9}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
@@ -42,6 +45,7 @@ class Buttons extends Component {
                     <br/> 
 
                     <button 
+                    className="white-buttons"
                     value={4}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
@@ -49,6 +53,7 @@ class Buttons extends Component {
                     4
                     </button>
                     <button 
+                    className="white-buttons"
                     value={5}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
@@ -56,6 +61,7 @@ class Buttons extends Component {
                     5
                     </button>
                     <button 
+                    className="white-buttons"
                     value={6}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
@@ -73,6 +79,7 @@ class Buttons extends Component {
                     <br/>
 
                     <button 
+                    className="white-buttons"
                     value={1}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
@@ -80,6 +87,7 @@ class Buttons extends Component {
                     1
                     </button>
                     <button 
+                    className="white-buttons"
                     value={2}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
@@ -87,6 +95,7 @@ class Buttons extends Component {
                     2
                     </button>
                     <button 
+                    className="white-buttons"
                     value={3}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
@@ -94,7 +103,6 @@ class Buttons extends Component {
                     3
                     </button>
                     <button
-                    className="red-buttons" 
                     className="red-buttons"
                     value={"-"}
                     style={{height: 80, width: 80, margin: 0}}
@@ -104,6 +112,7 @@ class Buttons extends Component {
                     </button> 
                     <br/> 
                     <button 
+                    className="white-buttons"
                     value={"+"}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
@@ -112,6 +121,7 @@ class Buttons extends Component {
                     </button>
 
                     <button 
+                    className="white-buttons"
                     value={0}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
@@ -119,6 +129,7 @@ class Buttons extends Component {
                     0
                     </button>
                     <button 
+                    className="white-buttons"
                     value={"."}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
@@ -136,6 +147,7 @@ class Buttons extends Component {
                     <br/> 
 
                     <button 
+                    className="white-buttons"
                     value={"("}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
@@ -143,6 +155,7 @@ class Buttons extends Component {
                     (
                     </button>
                     <button 
+                    className="white-buttons"
                     value={"CE"}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
@@ -150,6 +163,7 @@ class Buttons extends Component {
                     CE
                     </button>
                     <button 
+                    className="white-buttons"
                     value={")"}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
@@ -157,6 +171,7 @@ class Buttons extends Component {
                     )
                     </button>
                     <button 
+                    className="white-buttons"
                     value={"C"}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}

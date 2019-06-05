@@ -91,11 +91,23 @@ async test () {
     return (
       <div>
         <center> 
+
           <div className="calculation-border" >
             <h1 className="calculations-box">
             {this.state.userMath + " " + this.state.result}
             </h1>
           </div>
+
+          <div className="texas-instruments-box">
+              <h2>
+                <br/>
+                Texas Instruments TI-108
+              </h2>
+              <div className="black-box" >
+              </div>
+             
+          </div>
+
         </center>
         <Buttons result={this.state} onClick={this.onClick} /> 
         <Users result={this.state} /> 

@@ -64,6 +64,7 @@ class Users extends Component {
                         </Fragment>
                     )
                     })}
+                    <hr/> 
                     {/* uncomment to see entriesReducer contents */}
                     {/* {JSON.stringify(this.props.reduxState.entriesReducer)} */}
                 </center>
