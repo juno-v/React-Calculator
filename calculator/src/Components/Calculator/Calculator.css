@@ -1,0 +1,21 @@
+.calculator-boarder {
+    background-color: blue; 
+    width: 400px; 
+}
+
+.calculations-box {
+    background-color: #D8D8D8; 
+    height: 50px; 
+    width: 300px;
+}
+
+.calculation-border {
+    background-color: #2146D9; 
+    height: 50px; 
+    width: 400px;
+}
+
+.red-buttons {
+    background-color: #F04E4E;
+    padding:15px 32px;
+}

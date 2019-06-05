@@ -55,7 +55,7 @@ class Users extends Component {
                     {this.props.reduxState.entries.map( (entries, index) => {
                     return (
                         <Fragment key={index} >
-                            <h4> {entries.calculation} </h4> 
+                            <h1> {entries.calculation} </h1> 
                             <Button 
                             value={entries.id}
                             secondary 
@@ -66,7 +66,6 @@ class Users extends Component {
                     })}
                     {/* uncomment to see entriesReducer contents */}
                     {/* {JSON.stringify(this.props.reduxState.entriesReducer)} */}
-                    <br/> {JSON.stringify(this.props.result)}
                 </center>
             </div>
         );

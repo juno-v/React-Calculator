@@ -8,156 +8,163 @@ class Buttons extends Component {
         return (
             <div> 
                 <center>
+                    <div className="calculator-boarder" >
                     <br/> 
-                    <Button primary
+                    <button 
                     value={7}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     7
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button 
                     value={8}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     8
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button 
                     value={9}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     9
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button 
+                    className="red-buttons"
                     value={"/"}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     /
-                    </Button>
+                    </button>
                     <br/> 
 
-                    <Button primary
+                    <button 
                     value={4}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     4
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button 
                     value={5}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     5
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button 
                     value={6}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     6
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button 
+                    className="red-buttons"
                     value={"*"}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     *
-                    </Button>
+                    </button>
                     <br/>
 
-                    <Button primary
+                    <button 
                     value={1}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     1
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button 
                     value={2}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     2
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button 
                     value={3}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     3
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button
+                    className="red-buttons" 
+                    className="red-buttons"
                     value={"-"}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     -
-                    </Button> 
+                    </button> 
                     <br/> 
-                    <Button primary
+                    <button 
                     value={"+"}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     +
-                    </Button>
+                    </button>
 
-                    <Button primary
+                    <button 
                     value={0}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     0
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button 
                     value={"."}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     .
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button
+                    className="red-buttons" 
                     value={"="}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     =
-                    </Button>
+                    </button>
                     <br/> 
 
-                    <Button primary
+                    <button 
                     value={"("}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     (
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button 
                     value={"CE"}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     CE
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button 
                     value={")"}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     )
-                    </Button>
-                    <Button primary
+                    </button>
+                    <button 
                     value={"C"}
                     style={{height: 80, width: 80, margin: 0}}
                     onClick={event => this.props.onClick(event.target.value)}
                     >
                     C
-                    </Button>
+                    </button>
                     <br/> 
+                    </div>
                 </center>
             </div>
         );

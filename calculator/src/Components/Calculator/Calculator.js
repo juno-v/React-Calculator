@@ -3,7 +3,7 @@ import Buttons from "./Buttons";
 import Users from "./Users";
 import { connect } from 'react-redux';
 import * as math from 'mathjs'
-import { equal } from 'assert';
+import "./Calculator.css"
 
 class Calculator extends Component {
 
@@ -91,7 +91,11 @@ async test () {
     return (
       <div>
         <center> 
-          <input placeholder={this.state.userMath + " " + this.state.result} />
+          <div className="calculation-border" >
+            <h1 className="calculations-box">
+            {this.state.userMath + " " + this.state.result}
+            </h1>
+          </div>
         </center>
         <Buttons result={this.state} onClick={this.onClick} /> 
         <Users result={this.state} /> 
