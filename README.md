@@ -46,7 +46,7 @@ If npm run client did not open a new browser/tab for you, in your browser URL, i
     - Please reach out to me for feedback on the code if you'd like! 
 
 # Personal touches that were added 
-    - There was no formal design requirement so I decided to design the calulator to mimic a calculator that I had used in middle school, the "Texas Instruments TI-108"
+    - There was no formal design requirement so I decided to design the calulator to mimic a calculator that I had used in middle school, the Texas Instruments TI-108
     - I also used Semantic Ui for simple icons and buttons, a friend a reccomended it for it's simplicity. 
 
 
