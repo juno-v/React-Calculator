@@ -37,14 +37,6 @@ If npm run client did not open a new browser/tab for you, in your browser URL, i
 - Websockets/Socket.io for DOM to reflect database real time instead of using a set interval refresh rate 
 - Change the code to show just numbers and not the object result of the mathmetical equation
 
-# Notes for employers 
-- What was exciting about this project? 
-    - This was the first code challenge I've ever recieved on the job search. Although I wasn't selected to proceed, I was excitied to learn how to do mathematical functions with React. Prior to this application I did not do any complicated math other than add, subtract, divide, modulus, etc with variables and hard coded numbers. 
-    - During this time I was in the final stages of a group client project which put me to the test of juggling a code challenge and finishing a project with the best of my skills and energy divided into two. 
-    - I think overall I did a decent job, and I'm still looking for feedback on this code challenge! 
-    - It was exciting to try and see what I can juggle betweem and how efficient I could be. It wans't too bad overall. 
-    - Please reach out to me for feedback on the code if you'd like! 
-
 # Personal touches that were added 
 - There was no formal design requirement so I decided to mimic a calculator that I had used in middle school, the __Texas Instruments TI-108__
 - I also used Semantic Ui for simple icons and buttons, a friend a reccomended it for it's simplicity. 
